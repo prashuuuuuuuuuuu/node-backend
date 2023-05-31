@@ -7,6 +7,14 @@ const { endpoint } = require("../config");
 const { isAuthenticated } = require("../helper/tokenVerify");
 const fs = require("fs");
 
+const corsOptions = {
+  origin: ['http://service-1.default.svc.cluster.local:8080']
+  credentials: true,
+  optionSuccessStatus: 200
+}
+
+
+
 module.exports = () => {
   for (const key in helper) {
     global[key] = helper[key];
