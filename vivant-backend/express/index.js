@@ -8,7 +8,7 @@ const { isAuthenticated } = require("../helper/tokenVerify");
 const fs = require("fs");
 
 const corsOptions = {
-  origin: '*' //['http://service-1.default.svc.cluster.local:8080']
+  origin: '*', //['http://service-1.default.svc.cluster.local:8080']
   credentials: true,
   optionSuccessStatus: 200
 }
