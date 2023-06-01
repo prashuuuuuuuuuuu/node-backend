@@ -8,7 +8,7 @@ const { isAuthenticated } = require("../helper/tokenVerify");
 const fs = require("fs");
 
 const corsOptions = {
-  origin: ['http://service-1.default.svc.cluster.local:8080']
+  origin: '*' //['http://service-1.default.svc.cluster.local:8080']
   credentials: true,
   optionSuccessStatus: 200
 }
@@ -22,7 +22,7 @@ module.exports = () => {
   global["commonErrorMessage"] = "Something went wrong please try again";
 
   const app = express();
-  app.use(cors());
+  app.use(cors(corsOptions));
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
   app.use(express.static(path.join(root, "/public")));
