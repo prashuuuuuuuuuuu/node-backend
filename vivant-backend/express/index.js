@@ -26,6 +26,9 @@ module.exports = () => {
   app.use(bodyParser.urlencoded({ extended: false }));
   app.use(bodyParser.json());
   app.use(express.static(path.join(root, "/public")));
+  app.get("/api/v1/test",(req,res)=>{
+    res.send("<h1> server is Running </h1>")
+  })
   app.use(isAuthenticated);
   app.use(endpoint, require("../controller/user.routes"));
   return app;
