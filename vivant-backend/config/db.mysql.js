@@ -8,13 +8,14 @@ var pool = mysql.createPool({
   password: "Test_123",
   database:"motivity"
 });
-
+const connect = () =>{
 pool.getConnection((err,connection)=> {
   if(err)
   throw err;
   console.log('Database connected successfully');
-  connection.release();
+  // connection.release();
 });
+}
 
 const query = (q) => {
   return new Promise((resolve, reject) => {
@@ -30,7 +31,7 @@ const query = (q) => {
 }
 
  module.exports = {
-   query,
+   query,connect
  };
 
 // var connection = mysql.createConnection({

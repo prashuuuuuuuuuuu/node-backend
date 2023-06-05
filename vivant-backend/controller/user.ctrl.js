@@ -1,6 +1,7 @@
 const { passwordHash, verifyPassword } = require("../helper/bcryptPassword");
 const userQuery = require("./user.query");
 const { generateToken, jwtDecode } = require("../helper/jwtToken");
+// const {} = require('../config')
 
 exports.addUser = async (req, res) => {
   try {
