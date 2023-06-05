@@ -22,4 +22,4 @@ COPY . .
  
 
 # Run app
-CMD ["npm", "start"]
+CMD ["npm", "start", "server.js"]
