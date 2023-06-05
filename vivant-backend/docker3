@@ -4,7 +4,7 @@ FROM mysql:latest
  
 
 # Copy the query script to the container
-COPY query.sql /docker-entrypoint-initdb.d/
+COPY script.sh /docker-entrypoint-initdb.d/
 
  
 
