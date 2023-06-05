@@ -1,0 +1,25 @@
+# Base image
+FROM mysql:latest
+
+ 
+
+# Copy the query script to the container
+COPY query.sql /docker-entrypoint-initdb.d/
+
+ 
+
+# Set environment variables for MySQL configuration
+ENV MYSQL_ROOT_PASSWORD=Prashuu@1122
+ENV MYSQL_DATABASE=motivity
+ENV MYSQL_USER=root
+ENV MYSQL_PASSWORD=Prashuu@1122
+
+ 
+
+# Expose MySQL port
+EXPOSE 3306
+
+ 
+
+# Start MySQL service
+CMD ["mysqld"]
